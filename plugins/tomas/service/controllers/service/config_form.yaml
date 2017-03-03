@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Service
+
+# Model Form Field configuration
+form: $/tomas/service/models/service/fields.yaml
+
+# Model Class name
+modelClass: Tomas\Service\Models\Service
+
+# Default redirect location
+defaultRedirect: tomas/service/service
+
+# Create page
+create:
+    title: Create Service
+    redirect: tomas/service/service/update/:id
+    redirectClose: tomas/service/service
+
+# Update page
+update:
+    title: Edit Service
+    redirect: tomas/service/service
+    redirectClose: tomas/service/service
+
+# Preview page
+preview:
+    title: Preview Service

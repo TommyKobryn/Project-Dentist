@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+/storage/cms/cache/**
+/storage/cms/twig/**
+/storage/framework/cache/**
+/storage/framework/sessions/**

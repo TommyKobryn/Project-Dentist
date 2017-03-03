@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Usluga
+    price:
+        label: Przedzial Cenowy
+    description:
+        label: Opis
+        type: textarea

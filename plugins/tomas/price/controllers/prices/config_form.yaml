@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Prices
+
+# Model Form Field configuration
+form: $/tomas/price/models/prices/fields.yaml
+
+# Model Class name
+modelClass: Tomas\Price\Models\Prices
+
+# Default redirect location
+defaultRedirect: tomas/price/prices
+
+# Create page
+create:
+    title: Create Prices
+    redirect: tomas/price/prices/update/:id
+    redirectClose: tomas/price/prices
+
+# Update page
+update:
+    title: Edit Prices
+    redirect: tomas/price/prices
+    redirectClose: tomas/price/prices
+
+# Preview page
+preview:
+    title: Preview Prices

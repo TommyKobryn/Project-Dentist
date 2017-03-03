@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Imie i Nazwisko
+    content:
+        label: Treść
+        type: richeditor
+        size: large
+        span: left
+    avatar:
+        label: Twoje Zdjęcie
+        type: fileupload
+        mode: image
+        span: right

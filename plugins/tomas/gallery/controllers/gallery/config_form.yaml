@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gallery
+
+# Model Form Field configuration
+form: $/tomas/gallery/models/gallery/fields.yaml
+
+# Model Class name
+modelClass: Tomas\Gallery\Models\Gallery
+
+# Default redirect location
+defaultRedirect: tomas/gallery/gallery
+
+# Create page
+create:
+    title: Create Gallery
+    redirect: tomas/gallery/gallery/update/:id
+    redirectClose: tomas/gallery/gallery
+
+# Update page
+update:
+    title: Edit Gallery
+    redirect: tomas/gallery/gallery
+    redirectClose: tomas/gallery/gallery
+
+# Preview page
+preview:
+    title: Preview Gallery

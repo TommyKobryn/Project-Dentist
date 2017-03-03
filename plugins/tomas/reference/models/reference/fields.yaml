@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Nazwa Galerii
+        span: left
+    photos:
+        label: Twoje Zdjęcia
+        type: fileupload
+        mode: image
+        span: right
+        size: large

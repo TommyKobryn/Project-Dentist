@@ -1,0 +1,23 @@
+==
+
+{% if this.page.id == "home" %}
+<div class="container"></div>
+<div class="hidemap">
+    <button class="mapToggle">
+        Show the map
+    </button>
+    <div class="googlemapcontainer">
+        <div class="ct-googleMap" data-location="Richmond" data-height="460" data-offset="0" data-zoom="16" data-icon="./assets/images/content/dentist/map-marker-dentist.png"></div>
+    </div>
+</div>
+<div class="container"></div>
+{% endif %}
+<footer>
+    <div class="container">
+        <div class="row" >
+            <div class="col-sm-5 totop "><a id="ct-js-totop" href="#header">Go to the top <i class="fa fa-angle-up"></i></a> </div>
+            <div class="col-sm-2 ct-footer-logo"><a href="indexmulti.html"><img src="http://platinum31.lek-med.pl/themes/platinum31/assets/img/logo-dark.png" style=" height:40px; width:80px;" alt=""></a></div>
+            <div class="col-sm-5 text-right copyright">© {{ 2017 }} <a href="http://themeplayers.net/">Theme Players</a></div>
+        </div>
+    </div>
+</footer>

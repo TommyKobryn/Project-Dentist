@@ -1,0 +1,200 @@
+title = "Start"
+url = "/"
+layout = "default"
+description = "home"
+is_hidden = 0
+[about]
+[gallery]
+[prices]
+[service]
+[testimonial]
+==
+
+<header class="ct-mediaSection ct-section scroll" id="header" data-stellar-background-ratio="0.3" data-height="80%" data-type="parallax" data-bg-image="{{'assets/images/content/dentist/logo1.jpg'|theme}}" data-bg-image-mobile="{{'assets/images/content/dentist/logo1.jpg'|theme}}">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div  class="ct-header-text col-md-6 text-center ct-js-animationDynamic pull-right">
+                    <h1 id ="header-text" style="padding-top:50px;" class="ct-motive-text text-uppercase ct-u-paddingBottom40 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">nowy uśmiech. <br>nowe życie.</h1>
+                    <h2 class="ct-u-hdr2 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">Nazywam się Dr. Beata Kowalska,<br>Lorem ipsum dolor sit amet<br>consectetur adipiscing elit</h2>
+                    <div class="ct-divider ct-divider--type4 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">
+                        <div class="ct-line ct-line--left"></div>
+                        <!--<i class="icon-teeth"></i>-->
+                        <img src={{'/assets/images/content/dentist/tooth.png'|theme}} style="height:70px; width:70px;" alt="">
+                        <div class="ct-line ct-line--right"></div>
+                    </div>
+                    <a href="#about" class="btn btn-default btn--round ct-js-btnScroll ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">Zobacz nasze usługi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<section class="ct-mediaSection  ct-u-paddingTop60 ct-u-paddingBottom40 scroll" id="about">
+    <div class="ct-header-arrow--circle">
+        <a class="ct-js-btnScroll" href="#about">
+            <div class="ct-arrow--outer"></div>
+            <div class="ct-arrow--inner">
+                <div class="ct-arrow--icon">
+                    <div class="ct-arrow"></div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% for about in abouts %}
+    <section class="ct-mediaSection  ct-u-paddingTop60 ct-u-paddingBottom20 ct-decoration--type4-rotate" id="about">
+        <div class="container">
+            <div class="row ct-u-image--full-width">
+                <div class="col-sm-6 col-md-6 ct-u-paddingBottom40">
+                    <img src="{{ about.avatar.thumb(570,355,'crop') }}"  alt="">
+                </div>
+                <div class="col-sm-6 col-md-6 ct-u-paddingBottom40">
+                  <h2 class="ct-u-paddingBottom30" >
+                  {{about.title}}</h2>
+                  {{about.content|raw}}
+                  </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</section>
+
+<!-- .........................Services  ...................... -->
+
+<div  class="ct-mediaSection ct-decoration--type4 ct-u-paddingBoth60 ct-glyph--text scroll " id="bkimage" style="background-color: #277c84; padding-top: 30px;padding-bottom: 50px; overflow:hidden;">
+ <div class="img" style=" background-attachment: fixed;"> <img src="{{'/assets/images/content/dentist/bkimage.jpg'|theme}}"> </div>
+    <header class="ct-pageSectionHeader text-center" >
+
+        <h3 id="service-title" class="ct-js-animation--item ct-u-hdr3 ct-motive-text"  data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="50" style="color:#4cb6c4">Usługi</h3>
+    </header>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for service in services %}
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading{{service.id}}">
+                <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{service.id}}" aria-expanded="true" aria-controls="collapseOne" >
+                    <i class="fa fa-plus" style="color:green; padding-right:5px;" aria-hidden="true"></i> {{service.title}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{service.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        {{service.description}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- ....................... Price List ........................ -->
+
+<section class="ct-mediaSection ct-u-paddingBoth80 ct-section ct-decoration--type4-rotate scroll" id="contact">
+    <div class="container">
+        <header class="ct-pageSectionHeader text-center" >
+            <h3 class="ct-js-animation--item ct-u-hdr3 ct-motive-text" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="50">CENNIK USŁUG</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="ct-js-table-stack">
+                    <tr>
+                        <th class="ct-u-paddingBoth10 text-center">#</th>
+                        <th class="ct-u-paddingBoth10">Service</th>
+                        <th class="ct-u-paddingBoth10">Price range</th>
+                        <th class="ct-u-paddingBoth10">Description</th>
+                    </tr>
+                    {% for price in prices %}
+                    <tr>
+                        <td class="text-center">{{loop.index}}</td>
+                        <td>{{price.title}}</td>
+                        <td>{{price.price}}</td>
+                        <td>{{price.description}}</td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ............................. Testimonials .............. -->
+
+<section class="ct-mediaSection no-table ct-decoration--type4 ct-u-paddingBoth80" id="clients"  data-stellar-background-ratio="0.3" data-height="auto" data-type="parallax" data-bg-image="{{'/assets/images/content/dentist/dental.jpg'|theme}}" data-bg-image-mobile="{{'/assets/images/content/dentist/dental.jpg'|theme}}" style="opacity: 0.4;">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <header class="ct-pageSectionHeader text-center ct-js-animationDynamic">
+                        <h2 class="ct-js-animation--item ct-u-text--white" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="-50">Sprawdz</h2>
+                        <h3 class="ct-js-animation--item ct-u-hdr3 ct-motive-text ct-u-text--white" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="50">CO MÓWIĄ INNI</h3>
+                    </header>
+                    <div class="ct-divider ct-divider--type4 text-center">
+                        <div class="ct-line ct-line--left"></div>
+                        <img src={{'/assets/images/content/dentist/tooth.png'|theme}} style="height:50px; width:50px;" alt="">
+                        <div class="ct-line ct-line--right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="ct-js-slick ct-slick" data-animations="true" data-autoplay="false" data-arrows="true">
+        {%for testimonial in testimonials%}
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{testimonial.content}}</p>
+                            <div class="ct-text-signature text-center">
+                                <span>{{testimonial.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</section>
+
+
+<!-- ............................. Galery .............. -->
+<section class="ct-mediaSection ct-u-paddingBoth20 ct-section ct-decoration--type4-rotate scroll" id="contact">
+<header class="ct-pageSectionHeader text-center" >
+    <h2 class="ct-js-animation--item" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="-50"> </h2>
+    <h3 id="service-title" class="ct-js-animation--item ct-u-hdr3 ct-motive-text"  data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="50">Galeria Zdjęć</h3>
+</header>
+    <div class="container">
+        <div class="ct-isotope-navigation text-center ct-u-marginBottom40">
+            <ul class="ct-gallery-filters list-unstyled list-inline">
+                <li><a data-filter="*" class="active">All works</a></li>
+                <li><a data-filter=".drills">Drills & Lasers</a></li>
+                <li><a data-filter=".lamps">Lamps</a></li>
+                <li><a data-filter=".misc">Miscellaneous</a></li>
+            </ul>
+        </div>
+        <div class="row ct-gallery">
+          {% for gallery in galleries %}
+          {% for photo in gallery.photos %}
+            <div class="ct-gallery-item col-sm-6 col-md-4 ct-u-paddingBottom30 drills">
+                <a class="ct-js-magnificPopupImage" href="{{ photo.path}}" >
+                    <figure class="ct-hover ct-hover-type13">
+                        <img src="{{ photo.thumb(570,355,'crop')}}" alt="">
+                        <figcaption>
+                            <h2 class="ct-motive-text">{{photo.title}}</h2>
+                            <p>Only with best quality.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

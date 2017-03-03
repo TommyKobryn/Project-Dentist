@@ -1,0 +1,53 @@
+title = "Referencje"
+url = "/referencje"
+layout = "default"
+description = "references"
+is_hidden = 0
+[reference]
+==
+<header class="ct-mediaSection ct-section scroll" id="header" data-stellar-background-ratio="0.3" data-height="555" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-page-title-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-page-title-bg.jpg">
+            <div class="ct-mediaSection-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center ct-js-animationDynamic ct-header-multipg">
+                            <h1 class="ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">Work<br>
+                                <span class="ct-motive-text ct-u-hdr2 ct-js-animation--item">EXAMPELS</span></h1>
+                            <div class="ct-divider ct-divider--type4 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">
+                                <div class="ct-line ct-line--left"></div>
+                                <img src="./assets/images/divider-icon-type4.png" alt="">
+                                <div class="ct-line ct-line--right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="ct-mediaSection ct-u-paddingBoth80 ct-section ct-decoration--type4-rotate scroll" id="contact">
+            <div class="container">
+                <div class="ct-isotope-navigation text-center ct-u-marginBottom40">
+                    <ul class="ct-gallery-filters list-unstyled list-inline">
+                        <li><a data-filter="*" class="active">All works</a></li>
+                        <li><a data-filter=".drills">Drills & Lasers</a></li>
+                        <li><a data-filter=".lamps">Lamps</a></li>
+                        <li><a data-filter=".misc">Miscellaneous</a></li>
+                    </ul>
+                </div>
+                <div class="row ct-gallery">
+                  {% for reference in references %}
+                  {% for photo in reference.photos %}
+                    <div class="ct-gallery-item col-sm-6 col-md-4 ct-u-paddingBottom50 drills">
+                        <a class="ct-js-magnificPopupImage" href="{{photo.path}}" title="Tailoring a men's shirt">
+                            <figure class="ct-hover ct-hover-type13">
+                                <img src="{{ photo.thumb(570,355,'crop')}}" alt="">
+                                <figcaption>
+                                    <h2 class="ct-motive-text">{{reference.title}}</h2>
+                                    <p>Only with best quality.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>

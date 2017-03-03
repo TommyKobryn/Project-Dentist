@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: About
+
+# Model Form Field configuration
+form: $/tomas/about/models/about/fields.yaml
+
+# Model Class name
+modelClass: Tomas\About\Models\About
+
+# Default redirect location
+defaultRedirect: tomas/about/about
+
+# Create page
+create:
+    title: Create About
+    redirect: tomas/about/about/update/:id
+    redirectClose: tomas/about/about
+
+# Update page
+update:
+    title: Edit About
+    redirect: tomas/about/about
+    redirectClose: tomas/about/about
+
+# Preview page
+preview:
+    title: Preview About

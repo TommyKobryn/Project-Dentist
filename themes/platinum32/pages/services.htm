@@ -1,0 +1,75 @@
+title = "Usługi"
+url = "/uslugi"
+layout = "default"
+description = "services"
+is_hidden = 0
+
+[service]
+==
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+<header class="ct-mediaSection ct-section" id="header" data-stellar-background-ratio="0.3" data-height="555" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-page-title-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-page-title-bg.jpg">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center ct-js-animationDynamic ct-header-multipg">
+                    <h1 class="ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">Tools & Materials<br>
+                        <span class="ct-motive-text ct-u-hdr2 ct-js-animation--item">I USE IN MY WORK</span></h1>
+                    <div class="ct-divider ct-divider--type4 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">
+                        <div class="ct-line ct-line--left"></div>
+                        <img src="./assets/images/divider-icon-type4.png" alt="">
+                        <div class="ct-line ct-line--right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- <section class="ct-mediaSection ct-u-paddingBoth80 ct-decoration--type4-rotate" id="prices"> -->
+    <div class="container">
+        <header class="ct-pageSectionHeader text-center" >
+            <h2 class="ct-js-animation--item" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="-50"> </h2>
+            <h3 id="service-title" class="ct-js-animation--item ct-u-hdr3 ct-motive-text"  data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="50">Usługi</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {% for service in services %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading{{service.id}}">
+                        <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{service.id}}" aria-expanded="true" aria-controls="collapseOne" >
+                            <i class="fa fa-plus" style="color:green; padding-right:5px;" aria-hidden="true"></i> {{service.title}}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{service.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                {{service.description}}
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<!--</section> -->
+<section class="ct-mediaSection ct-textBox--withButton ct-u-paddingBoth80 ct-section scroll" id="contact">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-7 ct-text-panel">
+                    <span class="ct-u-fw300">Aute esse pop-up aesthetic</span>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <a href="{{'contact' | page}}" class="btn btn-primary btn-lg btn--round pull-right">Contact me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

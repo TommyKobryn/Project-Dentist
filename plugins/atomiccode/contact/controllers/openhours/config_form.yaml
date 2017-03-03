@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Openhour
+
+# Model Form Field configuration
+form: $/atomiccode/contact/models/openhours/fields.yaml
+
+# Model Class name
+modelClass: Atomiccode\Contact\Models\Openhours
+
+# Default redirect location
+defaultRedirect: atomiccode/contact/openhours
+
+# Create page
+create:
+    title: Create Openhour
+    redirect: atomiccode/contact/openhours/update/:id
+    redirectClose: atomiccode/contact/openhours
+
+# Update page
+update:
+    title: Edit Openhour
+    redirect: atomiccode/contact/openhours
+    redirectClose: atomiccode/contact/openhours
+
+# Preview page
+preview:
+    title: Preview Openhour

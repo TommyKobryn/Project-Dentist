@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: Usluga
+        searchable: true
+    price:
+        label: Cena
+        searchable: true

@@ -1,0 +1,33 @@
+==
+
+<nav class="navbar ct-navbar--transparent ct-navbar--stickyToTop ct-navbar--withTopbar" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="{{'home'|page}}">
+           <img class="ct-logo-navbar--transparent" src="http://platinum31.lek-med.pl/themes/platinum31/assets/img/logo-dark.png" style="padding-top:5px; margin-top:12px; height:40px; width:80px;"  alt="">
+            <img class="ct-logo-navbar--solid" src="{{'assets/images/content/dentist/logo-solid.png'|theme}}"  alt="">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a {% if this.page.description == 'home'%} class="ct-navbar-item--active" {% endif %} href="{{'home'|page}}">Strona Glowna</a>
+                <li ><a {% if this.page.description == 'about'%} class="ct-navbar-item--active" {% endif %} href="{{'about'|page}}">O Mnie</a></li>
+                <li > <a {% if this.page.description == 'prices' %} class="ct-navbar-item--active" {% endif %} href="{{'prices'|page}}">Cennik</a></li>
+                <li > <a {% if this.page.description == 'services' %} class="ct-navbar-item--active" {% endif %} href="{{'services'|page}}">Uslugi</a></li>
+                <li > <a {% if this.page.description == 'blog' %} class="ct-navbar-item--active" {% endif %} href="{{'blog'|page}}">Aktualnosci</a></li>
+                <li > <a {% if this.page.description == 'gallery' %} class="ct-navbar-item--active" {% endif %} href="{{'gallery'|page}}">Galeria</a></li>
+                <li > <a {% if this.page.description == 'references' %} class="ct-navbar-item--active" {% endif %} href="{{'references'|page}}">Referencje</a></li>
+                <li class="dropdown "><a {% if this.page.description == 'contact'%} class="ct-navbar-item--active" {% endif %} href="{{'contact'|page}}">Kontakt</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <span>Poniedzialek - Piatek</span>
+                            <p>9:00AM - 6:00PM</p>
+                            <span>Sobota</span>
+                            <p>10:00AM - 4:00PM</p>
+                            <span>Niedziela</span>
+                            <p>CLOSED</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

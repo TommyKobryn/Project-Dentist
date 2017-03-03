@@ -1,0 +1,11 @@
+{% if result == true %}
+<div class="successMessage alert alert-success show" >
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Thank You!
+  </div>
+  {% else %}
+    <div class="errorMessage alert alert-danger show" >
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Ups! An error occured. Please try again later.
+  </div>
+{% endif %}

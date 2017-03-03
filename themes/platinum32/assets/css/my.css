@@ -1,0 +1,27 @@
+
+#service-title {
+padding-top: 15px;
+}
+
+#header-text {
+padding-top: 150px;
+}
+
+#bkimage {
+position: relative;
+overflow: hidden;
+}
+
+.img {
+position: absolute;
+  left: 0;
+  top: 9px;
+  width: 100%;
+  height: auto;
+  opacity: 0.2;
+  background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
+}

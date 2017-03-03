@@ -1,0 +1,81 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Imię i Nazwisko lekarza
+        span: left
+    subtitle:
+        label: Specjalizacja i Miesjcowość
+        span: right
+    section1:
+        label: Adres
+        type: section
+    address_city:
+        label: Miasto
+        span: left
+    address_code:
+        label: Kod Pocztowy
+        span: right
+    address_street:
+        label: Ulica
+        span: left
+    address_number:
+        label: Numer
+        span: right
+    section2:
+        label: GoogleMap i Social Media
+        type: section
+    # map_type:
+    #     label: Sposób podięcia mapy Google
+    #     type: radio
+    #     options:
+    #         0: Współrzędne
+    #         1: Link <iframe>
+    # mapX:
+    #     label: Pierwsza współrzędna GoogleMap
+    #     span: left
+    #     trigger:
+    #         action: show
+    #         field: map_type
+    #         condition: value[0]
+    # mapY:
+    #     label: Druga współrzędna GoogleMap
+    #     span: right
+    #     trigger:
+    #         action: show
+    #         field: map_type
+    #         condition: value[0]
+    map_link:
+        label: Link <iframe>
+        span: full
+        # trigger:
+        #     action: show
+        #     field: map_type
+        #     condition: value[1]
+    facebook:
+        label: Link do Facebook
+        span: left
+    google:
+        label: Link do Google+
+        span: right
+    section3:
+        label: Kontakt
+        type: section
+    phones:
+        label: Telefon(y)
+        span: left
+        type: repeater
+        form:
+            fields:
+                number:
+                    label: Nr telefonu
+    emails:
+        label: Email(e)
+        span: right
+        type: repeater
+        form:
+            fields:
+                mail:
+                    label: Email

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Contact
+
+# Model Form Field configuration
+form: $/atomiccode/contact/models/contact/fields.yaml
+
+# Model Class name
+modelClass: Atomiccode\Contact\Models\Contact
+
+# Default redirect location
+defaultRedirect: atomiccode/contact/contact
+
+# Create page
+create:
+    title: Create Contact
+    redirect: atomiccode/contact/contact/update/:id
+    redirectClose: atomiccode/contact/contact
+
+# Update page
+update:
+    title: Edit Contact
+    redirect: atomiccode/contact/contact
+    redirectClose: atomiccode/contact/contact
+
+# Preview page
+preview:
+    title: Preview Contact

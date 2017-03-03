@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    hours:
+        label: Godziny Otwarcia
+        type: repeater
+        form:
+            fields:
+                day:
+                    label: Dzień
+                    span: left
+                hour_from:
+                    label: Od godziny
+                    type: datepicker
+                    mode: time
+                    format: H:i
+                    span: right
+                hour_to:
+                    label: Do godziny
+                    type: datepicker
+                    mode: time
+                    format: H:i
+                    span: right

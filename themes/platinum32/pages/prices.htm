@@ -1,0 +1,53 @@
+title = "cennik"
+url = "/cennik"
+layout = "default"
+description = "prices"
+is_hidden = 0
+
+[prices]
+==
+<header class="ct-mediaSection ct-section scroll" id="header" data-stellar-background-ratio="0.3" data-height="555" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-page-title-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-page-title-bg.jpg">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center ct-js-animationDynamic ct-header-multipg">
+                        <h1 class="ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">Check out<br>
+                            <span class="ct-motive-text ct-u-hdr2 ct-js-animation--item">MY PRICES</span></h1>
+                        <div class="ct-divider ct-divider--type4 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">
+                            <div class="ct-line ct-line--left"></div>
+                            <img src="./assets/images/divider-icon-type4.png" alt="">
+                            <div class="ct-line ct-line--right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="ct-mediaSection ct-u-paddingBoth80 ct-section ct-decoration--type4-rotate scroll" id="contact">
+        <div class="container">
+            <header class="ct-pageSectionHeader text-center" >
+                <h2 class="ct-js-animation--item" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="-50">Aktualny</h2>
+                <h3 class="ct-js-animation--item ct-u-hdr3 ct-motive-text" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="50">CENNIK USŁUG</h3>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="ct-js-table-stack">
+                        <tr>
+                            <th class="ct-u-paddingBoth10 text-center">#</th>
+                            <th class="ct-u-paddingBoth10">Service</th>
+                            <th class="ct-u-paddingBoth10">Price range</th>
+                            <th class="ct-u-paddingBoth10">Description</th>
+                        </tr>
+                        {% for price in prices %}
+                        <tr>
+                            <td class="text-center">{{loop.index}}</td>
+                            <td>{{price.title}}</td>
+                            <td>{{price.price}}</td>
+                            <td>{{price.description}}</td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>

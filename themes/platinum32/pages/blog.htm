@@ -1,0 +1,195 @@
+title = "Aktualnosci"
+url = "/aktualnosci"
+layout = "default"
+description = "blog"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "about"
+postPage = "about"
+==
+<header class="ct-mediaSection ct-section" id="header" data-stellar-background-ratio="0.3" data-height="200" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-page-title-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-page-title-bg.jpg">
+</header>
+<section class="ct-mediaSection ct-decoration--type4-rotate ct-u-paddingBoth80 ct-blog" id="works">
+    <div class="container">
+        <header class="ct-pageSectionHeader text-center">
+            <h2 class="ct-js-animation--item" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="-50" >Najnowsze</h2>
+            <h3 class="ct-js-animation--item ct-u-hdr3 ct-motive-text" data-when="enter" data-from="0" data-to="1" data-opacity="0" data-translatey="100">AKTUALNOŚCI</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-9">
+                {% set posts = blogPosts.posts %}
+              {% for post in posts %}
+                <article class="ct-articleBox ct-articleBox--default">
+                    <div class="ct-articleBox-media">
+                        <img src="./assets/images/content/dentist/dentist-materials-blog-image-1.jpg" alt="">
+                    </div>
+                    <div class="ct-articleBox-titleBox">
+                        <div class="ct-articleBox-meta">
+                            <span>{{ post.published_at|date('M d, Y') }}</span>
+                            <span>
+                              {% if post.categories.count %} in {% endif %}
+                              {% for category in post.categories %}
+                                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                            </span>
+                            <span>By admin</span>
+                        </div>
+                        <a href="{{ 'blog' | page }}/{{post.slug}}"><h4>{{ post.title }}</h4></a>
+                    </div>
+                    <div class="ct-articleBox-description">
+                      {{ post.summary }}
+                    </div>
+                    <a class="ct-articleBox-button" href="{{ post.url }}">Continue reading<i class="fa fa-angle-right"></i></a>
+
+                    <div class="clearfix"></div>
+                    {% else %}
+                        <li class="no-data">{{ noPostsMessage }}</li>
+                </article>
+                {%endfor%}
+
+
+                <div class="ct-pagination">
+                    <div class="col-md-2">
+                        <ul class="pager text-left">
+                            <li><a href="#"><i class="fa fa-angle-left"></i>  Previous page</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <ul class="pagination pagination-lg">
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="pager text-right">
+                            <li><a href="#">Next page  <i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ct-js-sidebar">
+                <div class="row">
+                    <div class="col-sm-6 col-md-12">
+                        <section class="widget">
+                            <div class="widget-inner">
+                                <div class="ct-search-widget">
+                                    <div class="form-group ct-form-group-label--float">
+                                        <input id="search" placeholder="Name (required)" required type="text" name="field[]" class="form-control input-lg">
+                                        <label for="search">Search this blog</label>
+                                        <div class="ct-input-group-btn">
+                                            <button class="btn btn-primary">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-12">
+                        <section class="widget">
+                            <div class="widget-inner">
+                                <h4 class="text-uppercase">Categories</h4>
+                                <ul>
+                                    <li class="current-cat">
+                                        <a href="#" title="View all posts filed under Quality">Healthcare<span
+                                                class="ct-blogWidget-count"> (2)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="View all posts filed under Opinions">Dentists<span
+                                                class="ct-blogWidget-count"> (9)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="View all posts filed under Opinions">Specialists<span
+                                                class="ct-blogWidget-count"> (2)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="View all posts filed under Inspirations">Photography<span
+                                                class="ct-blogWidget-count"> (9)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="View all posts filed under Travel">Travel<span
+                                                class="ct-blogWidget-count"> (4)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="View all posts filed under Inspirations">Wordpress<span
+                                                class="ct-blogWidget-count"> (4)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-12">
+                        <section class="widget ct-widget-latestPosts">
+                            <div class="widget-inner">
+                                <h4 class="text-uppercase">Recent Posts</h4>
+                                <ul>
+                                    <li>
+                                        <div class="widget-latest-posts-content">
+                                            <span>
+                                                    March 4, 2014
+                                                </span>
+                                            <a href="#" title="View Post">This is a standard post format with preview picture</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="widget-latest-posts-content">
+                                            <span>
+                                                    March 4, 2014
+                                                </span>
+                                            <a href="#" title="View Post">Gallery post format: post with multiple images</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="widget-latest-posts-content">
+                                            <span>
+                                                    March 4, 2014
+                                                </span>
+                                            <a href="#" title="View Post">Link post format</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-12">
+                        <section class="widget ct-widget-archives">
+                            <div class="widget-inner">
+                                <h4 class="text-uppercase">Archives</h4>
+                                <select class="ct-js-select">
+                                    <option value="month">Select  month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                </select>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-12">
+                        <section class="widget ct-widget-archives">
+                            <div class="widget-inner">
+                                <h4 class="text-uppercase">Tags</h4>
+                                <div class="tagcloud">
+                                    <a class="btn--round" href="#" title="">Healthcare</a>
+                                    <a class="btn--round" href="#" title="">Dentists</a>
+                                    <a class="btn--round" href="#" title="">Specialists</a>
+                                    <a class="btn--round" href="#" title="">Photography</a>
+                                    <a class="btn--round" href="#" title="">Travel</a>
+                                    <a class="btn--round" href="#" title="">Wordpress</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

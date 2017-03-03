@@ -1,0 +1,109 @@
+title = "o mnie"
+url = "/o-mnie"
+layout = "default"
+description = "about"
+is_hidden = 0
+
+[about]
+
+[testimonial]
+==
+<header class="ct-mediaSection ct-section" id="header" data-stellar-background-ratio="0.3" data-height="555" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-page-title-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-page-title-bg.jpg">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center ct-js-animationDynamic ct-header-multipg">
+                    <h1 class="ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">There's a little</h1>
+                    <h2 class="ct-js-animation--item ct-u-hdr2" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="-100">ABOUT ME</h2>
+                    <div class="ct-divider ct-divider--type4 ct-js-animation--item" data-when="span" data-from="0" data-to="0.5" data-opacity="0" data-translatey="100">
+                        <div class="ct-line ct-line--left"></div>
+                        <img src="./assets/images/divider-icon-type4.png" alt="">
+                        <div class="ct-line ct-line--right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% for about in abouts %}
+<section class="ct-mediaSection  ct-u-paddingBoth80 ct-decoration--type4-rotate" id="about">
+    <div class="container">
+        <div class="row ct-u-image--full-width">
+            <div class="col-sm-6 col-md-6 ct-u-paddingBottom40">
+                <img src="{{ about.avatar.thumb(570,355,'crop') }}"  alt="">
+            </div>
+            <div class="col-sm-6 col-md-6 ct-u-paddingBottom40">
+              <h2 class="ct-u-paddingBottom30" >
+              {{about.title}}</h2>
+              {{about.content|raw}}
+              </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+<section class="ct-mediaSection no-table ct-decoration--type4 ct-u-paddingBoth80" id="clients"  data-stellar-background-ratio="0.3" data-height="auto" data-type="parallax" data-bg-image="{{'assets/images/content/dentist/dentist-about-clients-bg.jpg'|theme}}" data-bg-image-mobile="{{'assets/images/content/dentist/dentist-about-clients-bg.jpg'|theme}}">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <header class="ct-pageSectionHeader text-center ct-js-animationDynamic">
+                        <h2 class="ct-js-animation--item ct-u-text--white" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="-50">What</h2>
+                        <h3 class="ct-js-animation--item ct-u-hdr3 ct-motive-text ct-u-text--white" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="50">PEOPLE SAY</h3>
+                    </header>
+                    <div class="ct-divider ct-divider--type4 text-center">
+                        <div class="ct-line ct-line--left"></div>
+                        <img src="./assets/images/divider-icon-type4.png" alt="">
+                        <div class="ct-line ct-line--right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="ct-js-slick ct-slick" data-animations="true" data-autoplay="false" data-arrows="true">
+        {%for testimonial in testimonials%}
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{testimonial.content}}</p>
+                            <div class="ct-text-signature text-center">
+                                <span>{{testimonial.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p >Curabitur lacinia mi sem, in iaculis ligula blandit. Aenean ornare erat eget accumsan interdum. Purus vulputate. Nunc at orci venenatis, odio vel, egestas eros. Nullam ac est a ante faucibus. Sed est neque, laoreet at laoreet eget, iaculis vitae libero. Donec faucibus ullamcorper pulvinar.</p>
+                            <div class="ct-text-signature text-center">
+                                <span>Richard Doe</span>
+                                <p>Regular customer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+<section class="ct-mediaSection ct-textBox--withButton ct-u-paddingBoth80 ct-section ct-decoration--type4 scroll" id="contact" data-stellar-background-ratio="0.3" data-height="175" data-type="parallax" data-bg-image="./assets/images/content/dentist/dentist-home-contact-bg.jpg" data-bg-image-mobile="./assets/images/content/dentist/dentist-home-contact-bg.jpg">
+    <div class="ct-mediaSection-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-7 ct-text-panel">
+                    <span class="ct-u-text--white ct-u-fw300">Periodontics & Implant specialist</span>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <a href="contact.html" class="btn btn-primary btn-lg btn--round pull-right">Contact me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

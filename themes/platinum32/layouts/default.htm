@@ -1,0 +1,76 @@
+==
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+
+        <link rel="icon" type="image/png" href="{{ 'assets/images/content/tailor/favicon.ico'|theme }}">
+        <link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/dentist.css'|theme }}" rel="stylesheet">
+  {% styles %}
+  <link href="{{ 'assets/css/my.css'|theme }}" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+        <script src="{{'assets/bootstrap/js/html5shiv.min.js'|theme}}"></script>
+        <script src="{{'assets/bootstrap/js/respond.min.js'|theme}}"></script>
+        <![endif]-->
+        <script src="{{ 'assets/js/modernizr.custom.js'|theme }}"></script>
+
+
+    </head>
+    <body class="cssAnimate onepager"><div class="ct-preloader"><div class="ct-preloader-content"></div></div>
+
+      <div class="main">
+        {% partial 'topbar' %}
+        {% partial 'mobile' %}
+
+        <div id="ct-js-wrapper" class="ct-pageWrapper">
+
+        <!-- Header -->
+            {% partial 'header' %}
+        <!-- Content -->
+            {% page %}
+
+        <!-- Footer -->
+            {% partial 'footer' %}
+</div>
+</div>
+        <!-- Scripts -->
+        <script src="{{ 'assets/js/jquery.min.js'|theme }}"></script>
+        <script src="{{ 'assets/bootstrap/js/bootstrap.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/helpers.js'|theme }}"></script>
+        {%if this.page.description != 'blog'%}<script src="{{ 'assets/js/jquery.pagescroller.lite.js'|theme }}"></script>{%endif%}
+        <script src="{{ 'assets/js/device.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/jquery.browser.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/snap.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/jquery.appear.js'|theme }}"></script>
+        <script src="{{ 'assets/js/magnific-popup/jquery.magnific-popup.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/twentytwenty/jquery.twentytwenty.js'|theme }}"></script>
+        <script src="{{ 'assets/js/twentytwenty/jquery.event.move.js'|theme }}"></script>
+        <script src="{{ 'assets/js/twentytwenty/init.js'|theme }}"></script>
+        <script src="{{ 'assets/js/smoothscroll.js'|theme }}"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyCu-Ro0CQ4sZq28kLE76LxcoTeaKfnBwvI"></script>
+        <script src="{{ 'assets/js/gmaps/gmap3.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/ct-mediaSection/jquery.stellar.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/ct-mediaSection/init.js'|theme }}"></script>
+        <script src="{{ 'assets/js/slick/slick.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/slick/init.js'|theme }}"></script>
+        <!-- <script src="{{ 'assets/form/js/contact-form.js'|theme }}"></script> -->
+        <script src="{{ 'assets/js/main.js'|theme }}"></script>
+        {% framework %}
+        {% framework extras %}
+        {% scripts %}
+
+
+    </body>
+</html>

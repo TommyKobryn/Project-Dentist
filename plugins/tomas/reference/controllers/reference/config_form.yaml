@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Reference
+
+# Model Form Field configuration
+form: $/tomas/reference/models/reference/fields.yaml
+
+# Model Class name
+modelClass: Tomas\Reference\Models\Reference
+
+# Default redirect location
+defaultRedirect: tomas/reference/reference
+
+# Create page
+create:
+    title: Create Reference
+    redirect: tomas/reference/reference/update/:id
+    redirectClose: tomas/reference/reference
+
+# Update page
+update:
+    title: Edit Reference
+    redirect: tomas/reference/reference
+    redirectClose: tomas/reference/reference
+
+# Preview page
+preview:
+    title: Preview Reference

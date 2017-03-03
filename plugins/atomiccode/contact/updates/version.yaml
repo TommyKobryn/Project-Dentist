@@ -1,0 +1,5 @@
+1.0.1: First version of contact
+1.0.2:
+    - Initialize Plugin
+    - create_contacts_table.php
+    - create_openhours_table.php

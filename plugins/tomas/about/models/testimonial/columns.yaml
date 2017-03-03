@@ -1,0 +1,8 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Imię Nazwisko
+        searchable: true
